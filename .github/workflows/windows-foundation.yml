@@ -1,0 +1,33 @@
+name: CMMS V4 G0.0 Windows Foundation
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  foundation:
+    runs-on: windows-2025
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show PowerShell runtime
+        shell: pwsh
+        run: |
+          $PSVersionTable | Out-String | Write-Host
+      - name: Validate module structure
+        shell: pwsh
+        run: ./tests/Run-FoundationTests.ps1
+      - name: Build G0.0 ZIP and verify archive
+        shell: pwsh
+        run: ./scripts/Build-DesignRelease.ps1 -Version '0.1.0'
+      - name: Publish tested ZIP artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cmms-v4-g0-0-foundation
+          path: |
+            out/*.zip
+            out/SHA256SUMS.txt
+            out/RELEASE_MANIFEST.json
+          if-no-files-found: error
