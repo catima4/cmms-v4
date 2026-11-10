@@ -1,0 +1,20 @@
+{
+  "id": "assets",
+  "version": "0.1.0",
+  "name": {
+    "vi": "Máy móc",
+    "en": "Assets"
+  },
+  "entryPage": "/modules/assets/web/assets.html",
+  "apiBase": "/api/v1/assets",
+  "permissions": {
+    "levels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "default": 0
+  },
+  "status": "placeholder_only"
+}

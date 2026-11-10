@@ -1,0 +1,20 @@
+{
+  "id": "inventory",
+  "version": "0.1.0",
+  "name": {
+    "vi": "Kho vật tư",
+    "en": "Inventory"
+  },
+  "entryPage": "/modules/inventory/web/inventory.html",
+  "apiBase": "/api/v1/inventory",
+  "permissions": {
+    "levels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "default": 0
+  },
+  "status": "placeholder_only"
+}

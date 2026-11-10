@@ -1,0 +1,23 @@
+# Local configuration, production information, temporary outputs
+.env
+.env.*
+!.env.example
+config/local*
+data/
+backups/
+logs/
+secrets/
+*.pfx
+*.p12
+*.key
+*.pem
+*.sqlite
+*.db
+*.jsonl
+*.zip
+!docs/reference/CMMS_V4_G0_v0_1_0_DESIGN_FULL.zip
+out/
+bin/
+obj/
+.vscode/
+.DS_Store
